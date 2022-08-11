@@ -1,0 +1,846 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/proximanova_regular.eot");
+  src: local("☺"), url("../fonts/proximanova_regular.woff") format("woff"),
+    url("../fonts/proximanova_regular.ttf") format("truetype"),
+    url("../fonts/proximanova_regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/proximanova_bold.eot");
+  src: local("☺"), url("../fonts/proximanova_bold.woff") format("woff"),
+    url("../fonts/proximanova_bold.ttf") format("truetype"),
+    url("../fonts/proximanova_bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("../fonts/CircularStd-Medium.eot");
+  src: local("Circular Std Medium"), local("../fonts/CircularStd-Medium"),
+    url("../fonts/CircularStd-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/CircularStd-Medium.woff2") format("woff2"),
+    url("../fonts/CircularStd-Medium.woff") format("woff"),
+    url("../fonts/CircularStd-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("../fonts/CircularStd-Bold.eot");
+  src: local("Circular Std Bold"), local("../fonts/CircularStd-Bold"),
+    url("../fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/CircularStd-Bold.woff2") format("woff2"),
+    url("../fonts/CircularStd-Bold.woff") format("woff"),
+    url("../fonts/CircularStd-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("../fonts/CircularStd-Book.eot");
+  src: local("Circular Std Book"), local("../fonts/CircularStd-Book"),
+    url("../fonts/CircularStd-Book.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/CircularStd-Book.woff2") format("woff2"),
+    url("../fonts/CircularStd-Book.woff") format("woff"),
+    url("../fonts/CircularStd-Book.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+}
+/* ---====================== Container =======================--- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  background-color: #fff;
+}
+
+.none {
+  display: none;
+}
+
+@mixin name {
+  display: inline-block;
+
+  font-family: "Circular Std";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  color: #f78cb6;
+  margin-bottom: 15px;
+}
+
+@mixin title {
+  font-family: "Circular Std";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 62px;
+  color: #56597a;
+  margin-bottom: 24px;
+}
+
+@mixin text {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #919299;
+  margin-bottom: 40px;
+}
+@mixin btn {
+  position: relative;
+  display: inline-block;
+
+  border-radius: 4px;
+  overflow: hidden;
+}
+@mixin btn-link {
+  padding: 14px 62px 14px 14px;
+
+  display: inline-block;
+
+  font-family: "Circular Std";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  background: #f78bb6;
+  border-radius: 4px;
+  transition: all 0.2s linear;
+}
+
+@mixin btn-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 13px;
+
+  height: 28px;
+  width: 28px;
+
+  background: rgba(255, 193, 218, 0.28);
+  border: 1.5px solid #ffffff;
+  border-radius: 2px;
+
+  pointer-events: none;
+  img {
+    position: relative;
+    top: 51%;
+    transform: translateY(-50%);
+    right: 10px;
+
+    width: 28px;
+  }
+}
+
+/* ---======================== Nav =======================--- */
+
+.nav {
+  padding-top: 57px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 130px;
+  &__logo {
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #56597a;
+    letter-spacing: 0.02em;
+    span {
+      color: #f087b1;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 73px;
+    }
+  }
+
+  &__link {
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #aaaaab;
+    transition: all 0.1s linear;
+    &:hover {
+      color: #56597a;
+    }
+  }
+}
+.burger {
+  display: none;
+}
+
+/* ---===================== header ======================--- */
+
+.header {
+  position: relative;
+
+  padding-bottom: 100px;
+  &::after {
+    content: url(../img/bloobs/bloobs-line1.png);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: -10;
+  }
+  &::before {
+    content: url(../img/bloobs/bloobs-1.png);
+
+    background: rgba(252, 242, 246, 0.61);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: -10;
+  }
+  &__row {
+    display: flex;
+  }
+
+  &__content {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__name {
+    position: relative;
+    padding-left: 43px;
+
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    color: #f78cb6;
+
+    margin-bottom: 39px;
+    &::before {
+      content: "";
+      width: 36px;
+      height: 3px;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      background: #f78cb6;
+    }
+  }
+
+  &__title {
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 74px;
+    color: #56597a;
+
+    margin-bottom: 31px;
+  }
+
+  &__text {
+    max-width: 537px;
+
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    color: #919299;
+
+    margin-bottom: 42px;
+  }
+
+  &__btn {
+    position: relative;
+    display: inline-block;
+
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__btn-link {
+    padding: 18px 85px 18px 22px;
+
+    display: inline-block;
+
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+
+    background: #f78bb6;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      background: #e7669a;
+    }
+  }
+
+  &__btn-img {
+    position: absolute;
+    top: 10px;
+    right: 23px;
+
+    height: 32px;
+    width: 32px;
+
+    background: rgba(255, 193, 218, 0.28);
+    border: 1.5px solid #ffffff;
+    border-radius: 2px;
+
+    pointer-events: none;
+    img {
+      position: relative;
+      top: 51%;
+      transform: translateY(-50%);
+      right: 10px;
+    }
+  }
+
+  &__img-cont {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: -40px;
+    right: 0;
+
+    width: 532px;
+    height: 532px;
+
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.burger {
+  position: relative;
+  cursor: pointer;
+
+  display: none;
+  width: 40px;
+  height: 30px;
+
+  &::after,
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: #56597a;
+    border-radius: 50px;
+  }
+  &::before {
+    bottom: 0;
+  }
+  &::after {
+    top: 0;
+  }
+  &__line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 4px;
+    background-color: #56597a;
+    border-radius: 50px;
+
+    transition: all 0.2s;
+  }
+  &__active .burger__line {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  &__active::after {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  &__active::before {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+}
+/* ---==================== Services ========================--- */
+.services {
+  position: relative;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+
+  &::before {
+    content: url(../img/bloobs/Bloobs-2.png);
+
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: -10;
+  }
+
+  &__text {
+    margin-bottom: 6px;
+    display: inline-block;
+
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #f78cb6;
+
+    transition: all 0.1s linear;
+
+    &:hover {
+      color: #e7669a;
+    }
+  }
+
+  &__title {
+    margin-bottom: 58px;
+
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 72px;
+    color: #56597a;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__item-wrapper {
+    flex: 1 1 270px;
+
+    min-height: 344px;
+  }
+
+  &__item {
+    padding: 10px 10px 41px 10px;
+
+    background: #fff1f9;
+    border-radius: 8px;
+    max-height: 307px;
+    transition: all 0.3s linear;
+    &:hover {
+      background: #f78cb6;
+      min-height: 344px;
+    }
+    &:hover .services__img {
+      fill: #fff;
+    }
+    &:hover .services__item-title,
+    &:hover .services__item-text {
+      color: #fff;
+    }
+    &:hover .services__item-link {
+      display: inline-block;
+    }
+  }
+  &__img {
+    margin-top: 56px;
+    margin-bottom: 42px;
+
+    width: 49px;
+    height: 43px;
+
+    fill: #f78cb6;
+  }
+
+  &__item-title {
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 72px;
+    color: #56597a;
+  }
+
+  &__item-text {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #919299;
+
+    margin-bottom: 30px;
+  }
+
+  &__item-link {
+    position: relative;
+
+    display: none;
+
+    font-family: "Circular Std";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+
+    transition: all 0.2s;
+    &:hover {
+      color: #56597a;
+    }
+    &:hover.services__item-link::after {
+      border-color: transparent transparent transparent #56597a;
+    }
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6.5px 0 6.5px 7px;
+      border-color: transparent transparent transparent #ffffff;
+
+      transition: all 0.2s;
+    }
+  }
+}
+/* ---==================== Design ========================--- */
+
+.design {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 79px;
+  }
+
+  &__img-cont {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 570px;
+    height: 472px;
+
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &__content {
+    max-width: 482px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__name {
+    @include name;
+    transition: all 0.1s linear;
+    &:hover {
+      color: #e7669a;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &__btn {
+    @include btn;
+  }
+
+  &__btn-link {
+    @include btn-link;
+    &:hover {
+      background: #e7669a;
+    }
+  }
+
+  &__btn-img {
+    @include btn-img;
+  }
+}
+/* ---==================== Team ========================--- */
+.team {
+  position: relative;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &::before {
+    content: url(../img/bloobs/Bloobs-3.png);
+
+    position: absolute;
+    top: -170px;
+    right: 0;
+
+    z-index: -10;
+  }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+  }
+
+  &__content {
+    max-width: 488px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__name {
+    @include name;
+    transition: all 0.1s linear;
+    &:hover {
+      color: #e7669a;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &__btn {
+    @include btn;
+  }
+
+  &__btn-link {
+    @include btn-link;
+    &:hover {
+      background: #e7669a;
+    }
+  }
+
+  &__btn-img {
+    @include btn-img;
+  }
+
+  &__img-cont {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: -70px;
+    left: 0;
+
+    width: 587px;
+    height: 587px;
+
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* ---==================== Testimonials ========================--- */
+.testimonials {
+  position: relative;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &::before {
+    content: url(../img/bloobs/Bloobs-4.png);
+
+    position: absolute;
+    top: -150px;
+    left: 0;
+    z-index: -10;
+  }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 137px;
+    margin-left: 50px;
+  }
+
+  &__img-cont {
+    position: relative;
+    width: 416px;
+    max-height: 418px;
+
+    background: #f78cb6;
+    border-radius: 8px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &__content {
+    max-width: 506px;
+  }
+
+  &__name {
+    @include name;
+    transition: all 0.1s linear;
+
+    &:hover {
+      color: #e7669a;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__text {
+    @include text;
+    max-width: 400px;
+  }
+
+  &__person-name {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #56597a;
+    margin-bottom: 5px;
+  }
+
+  &__address {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #ababab;
+  }
+}
+
+/* ---==================== Media ========================--- */
+@media (max-width: 1050px) {
+  .header__img-cont {
+    flex-grow: 0;
+  }
+  .header__img {
+    top: 240px;
+    left: -250px;
+
+    width: 250px;
+    height: 250px;
+  }
+  .header__text p {
+    max-width: 390px;
+  }
+}
+@media (max-width: 800px) {
+  .nav__list {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .nav_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 20px;
+
+    flex-direction: column;
+    justify-content: center;
+
+    background: #fff;
+    z-index: 10;
+  }
+  .nav_mobile .nav__logo {
+    margin-bottom: 200px;
+  }
+  .nav_mobile .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav_mobile .nav__item {
+    padding: 25px;
+
+    &:not(:first-child) {
+      margin-left: 0px;
+    }
+  }
+  .nav_mobile .burger {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+  }
+  .header__row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header__img {
+    width: 100%;
+    height: 100%;
+  }
+  .header__img-cont {
+    width: 532px;
+    height: 532px;
+  }
+}
